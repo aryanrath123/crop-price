@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from flask_cors import CORS
+import os
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 CORS(app)  # Enable CORS to allow frontend-backend communication
@@ -68,4 +69,4 @@ def get_historical_data():
     return jsonify(historical_data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)), debug=True)
