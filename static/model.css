@@ -1,0 +1,391 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("pexels-pixabay-46164.jpg"); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-attachment: fixed; /* Keeps the background fixed during scrolling */
+  color: #333; /* Text color for better readability */
+}
+
+/* Main Container */
+.container {
+  max-width: 900px;
+  margin: 20px auto; /* Added top margin for spacing */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7); /* Transparent white background for readability */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for contrast */
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1c7430; /* Subtle green for the header */
+  font-size: 2.5rem;
+}
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("pexels-pixabay-46164.jpg"); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-attachment: fixed; /* Keeps the background fixed during scrolling */
+  color: #333; /* Text color for better readability */
+}
+
+/* Main Container */
+.container {
+  max-width: 900px;
+  margin: 20px auto; /* Added top margin for spacing */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8); /* Transparent white background for readability */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Slightly darker shadow for contrast */
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1c7430; /* Subtle green for the header */
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for emphasis */
+}
+
+/* Form Sections */
+.dropdown-container,
+.prediction-container,
+.download-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #495057; /* Neutral text color */
+}
+
+select {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  outline: none;
+  background-color: #ffffff;
+  color: #495057;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  transition: border-color 0.3s ease;
+}
+
+select:hover {
+  border-color: #1c7430; /* Green border on hover */
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #1c7430; /* Professional green */
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #155d27;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: 2px solid #1c7430;
+  outline-offset: 2px;
+}
+
+/* Chart Section */
+.chart-container {
+  margin-top: 30px;
+  text-align: center;
+  padding: 25px;
+  background-color: rgba(241, 243, 245, 0.9); /* Light background with transparency */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for chart */
+}
+
+#priceTrendChart {
+  width: 100%; /* Ensures chart scales with the container */
+  height: auto;
+}
+
+/* Predicted Price Result */
+#result {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1c7430;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility changes */
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Loading Spinner */
+#loading {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1c7430;
+}
+
+/* Download Section */
+.download-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.download-container select {
+  margin-bottom: 10px;
+}
+
+.download-container button {
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  select,
+  button {
+    width: 100%;
+  }
+
+  .chart-container {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  select,
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+
+/* Form Sections */
+.dropdown-container,
+.prediction-container,
+.download-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #495057; /* Neutral text color */
+}
+
+select {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  outline: none;
+  background-color: #ffffff;
+  color: #495057;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  transition: border-color 0.3s ease;
+}
+
+select:hover {
+  border-color: #1c7430; /* Green border on hover */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #1c7430; /* Professional green */
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #155d27;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: 2px solid #1c7430;
+  outline-offset: 2px;
+}
+
+/* Chart Section */
+.chart-container {
+  margin-top: 30px;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(241, 243, 245, 0.9); /* Light background with transparency */
+  border-radius: 10px;
+}
+
+#priceTrendChart {
+  width: 100%; /* Ensures chart scales with the container */
+  height: auto;
+}
+
+/* Predicted Price Result */
+#result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1c7430;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility changes */
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Loading Spinner */
+#loading {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1c7430;
+}
+
+/* Download Section */
+.download-container {
+  text-align: center;
+}
+
+.download-container select {
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  select,
+  button {
+    width: 100%;
+  }
+
+  .chart-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  select,
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}

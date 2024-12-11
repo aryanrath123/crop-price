@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetable Price Prediction and Chart</title>
+    <link rel="stylesheet" href="static/model.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Vegetable Price Prediction</h1>
+        
+        <div class="dropdown-container">
+            <label for="vegetableDropdown">Select Vegetable:</label>
+            <select id="vegetableDropdown">
+                <!-- Vegetable options will be populated here -->
+            </select>
+        </div>
+
+        <div class="prediction-container">
+            <button id="predictBtn">Predict Price</button>
+            <div id="loading" style="display: none;">Loading...</div>
+            <div id="result"></div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="priceTrendChart" width="800" height="400"></canvas>
+        </div>
+
+        <div class="download-container">
+            <label for="imageTypeDropdown">Choose Image Format:</label>
+            <select id="imageTypeDropdown">
+                <option value="png">PNG</option>
+                <option value="jpeg">JPEG</option>
+            </select>
+            <button id="downloadBtn">Download Chart</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="static/model.js"></script>
+</body>
+</html>
