@@ -1,4 +1,4 @@
-const backendUrl = 'http://127.0.0.1:5000'; // Backend URL
+const backendUrl = 'https://crop-price-meqh.onrender.com'; // Backend URL for Render
 let chartInstance; // Global variable to store the Chart.js instance
 
 // Utility function to toggle loading spinner and button states
@@ -29,9 +29,12 @@ const clearResult = () => {
 const fetchVegetables = async () => {
     try {
         const response = await fetch(`${backendUrl}/get_vegetables`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch vegetables');
+        }
         const vegetables = await response.json();
         const dropdown = document.getElementById('vegetableDropdown');
-        
+        dropdown.innerHTML = ''; // Clear existing options
         vegetables.forEach(veg => {
             const option = document.createElement('option');
             option.value = veg;
@@ -40,14 +43,13 @@ const fetchVegetables = async () => {
         });
     } catch (error) {
         console.error('Error fetching vegetables:', error);
-        showError('Failed to load vegetable options.');
+        showError('Failed to load vegetable options. Please try again.');
     }
 };
 
 // Handle vegetable selection change
 document.getElementById('vegetableDropdown').addEventListener('change', () => {
     clearResult(); // Clear the result text when selection changes
-
     const selectedVeg = document.getElementById('vegetableDropdown').value;
     if (selectedVeg) {
         fetchHistoricalData(selectedVeg); // Fetch and render the historical chart for the new selection
@@ -74,6 +76,10 @@ document.getElementById('predictBtn').addEventListener('click', async () => {
             body: JSON.stringify({ vegetable: selectedVeg })
         });
 
+        if (!response.ok) {
+            throw new Error('Failed to predict price');
+        }
+
         const data = await response.json();
         toggleLoading(false);
         resultDiv.innerHTML = `<strong>Predicted price for ${selectedVeg} is ₹${data.predicted_price}</strong>`;
@@ -94,6 +100,10 @@ const fetchHistoricalData = async (vegetable) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ vegetable })
         });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch historical data');
+        }
 
         const data = await response.json();
 
